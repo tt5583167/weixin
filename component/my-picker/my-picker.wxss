@@ -1,0 +1,20 @@
+/*my-picker.wxss*/
+picker-view-column{font-size: 14px;text-align: center;}
+.com-picker-view{position: fixed;bottom: 0;width: 100%;z-index: 3;background: #fff;}
+
+/* 弹出标题 */
+.com-picker-title{display: flex;padding: 10px 15px;font-size: 14px;border-bottom: #f8f8f8 1px solid;}
+.com-picker-cancel{color: #999;}
+.com-picker-finish{color: palevioletred;}
+.com-picker-result{flex: 1;text-align: center;color: #999;}
+.com-title{display: flex;border-bottom: #f8f8f8 1px solid;}
+.com-title > view{flex:1;text-align: center;line-height: 40px;font-size: 14px;}
+
+/* 弹出效果 */
+.com-picker-view.false{transform:translateY(100%);-webkit-transform:translateY(100%);transition: all .3s cubic-bezier(0,.54,.51,.99);-webikit-transition: all .3s cubic-bezier(0,.54,.51,.99);opacity: 1;}
+.com-picker-view.true{transform:translateY(0%);-webkit-transform:translateY(0%);transition: all .3s cubic-bezier(0,.54,.51,.99);-webikit-transition: all .3s cubic-bezier(0,.54,.51,.99);opacity: 1;}
+
+/* 遮罩 */
+.com-picker-shadow{width: 100%;height: 100%;position: fixed;top: 0;left: 0; background-color:rgba(0,0,0,0.3);z-index: 2}
+.com-picker-shadow.true{ -webkit-transition: opacity 0.35s, visibility 0.35s;transition: opacity 0.35s, visibility 0.35s;visibility: visible;opacity: 1;}
+.com-picker-shadow.false{visibility: hidden;opacity: 0;  -webkit-transition: opacity 0.35s, visibility 0.35s;transition: opacity 0.35s, visibility 0.35s;}

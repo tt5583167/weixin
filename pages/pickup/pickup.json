@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "提货",
+  "usingComponents": {
+    "my-picker": "/component/my-picker/my-picker"
+  }
+}

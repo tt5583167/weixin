@@ -1,0 +1,53 @@
+<view wx:if="{{isHide}}">
+  <view wx:if="{{canIUse}}">
+    <view class='header'>
+      <image src='/images/LOGO.jpg'></image>
+    </view>
+
+    <view class='content'>
+      <view>申请获取以下权限</view>
+      <text>获得你的公开信息(昵称，头像等)</text>
+    </view>
+
+    <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+      授权登录
+    </button>
+  </view>
+  <view wx:else>请升级微信版本</view>
+</view>
+
+<view wx:else>
+  <view wx:if="{{isHideRegistered}}">
+    <view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+      <view class="page__bd">
+        <form bindsubmit="onSubmit">
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input weui-cell_vcode">
+              <view class="weui-cell__bd">
+                <input name="name" class="weui-input" placeholder="姓名" maxlength="11" bindinput="addOtherInfo" />
+              </view>
+            </view>
+            <view class="weui-cell weui-cell_input weui-cell_vcode">
+              <view class="weui-cell__bd">
+                <input name="phone" class="weui-inpu" placeholder="手机号码" type="number" maxlength="11" bindinput="inputPhoneNum" auto-focus />
+              </view>
+              <view class="weui-cell__ft">
+                <view class="weui-vcode-btn">
+                  <text wx:if="{{send}}" class="sendMsg" bindtap="sendMsg">发送</text>
+                </view>
+              </view>
+            </view>
+            <view class="weui-cell weui-cell_input weui-cell_vcode">
+              <view class="weui-cell__bd">
+                <input name="vcode" class="weui-input" placeholder="短信验证码" type="number" maxlength="11" bindinput="addCode" />
+              </view>
+            </view>
+          </view>
+          <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="showTopTips" formType="submit">确定</button>
+          </view>
+        </form>
+      </view>
+    </view>
+  </view>
+</view>

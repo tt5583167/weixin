@@ -1,0 +1,63 @@
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+  <view class="page__bd">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+            <input name="van_key" class="weui-input" auto-focus placeholder-style="color:#F76260" placeholder="车牌号" />
+          </view>
+        </view>
+      </view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+            <input name="doc_pcs" class="weui-input" type="number" placeholder="件数" />
+          </view>
+        </view>
+      </view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+            <input name="doc_wgt" class="weui-input" type="digit" placeholder="重量(千克)" />
+          </view>
+        </view>
+      </view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+            <input name="doc_cube" class="weui-input" type="digit" placeholder="体积(立方米)" />
+          </view>
+        </view>
+      </view>
+
+      <view class="section">
+        <my-picker range="{{val}}" title="{{['始发站','到达站']}}" bindfinish="finishHandler" is-shadow="{{true}}" picker-name="{{showStop}}">
+          <text></text>
+        </my-picker>
+      </view>
+
+      <view style="display:none">
+        <input name="stop_start" class="weui-input" value='{{stopStart}}' />
+        <input name="stop_terminal" class="weui-input" value='{{stopTerminal}}' />
+      </view>
+
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+            <input name="shipperaddress" class="weui-input" placeholder-style="color:#F76260" placeholder="发货地址" />
+          </view>
+        </view>
+      </view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+            <input name="consigneeaddress" class="weui-input" placeholder-style="color:#F76260" placeholder="收货地址" />
+          </view>
+        </view>
+      </view>
+      <view class="weui-btn-area">
+        <button class="weui-btn" type="primary" bindtap="showTopTips" formType="submit">确定</button>
+      </view>
+    </form>
+  </view>
+</view>

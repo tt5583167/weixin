@@ -1,0 +1,30 @@
+<view>
+  <button bindtap='pickerHandler'>{{pickerName}}</button>
+
+  <view class='com-picker-view {{pickerShow}}'>
+    <view class='com-picker-title'>
+      <view class='com-picker-cancel' bindtap='pickerCancel'>取消</view>
+      <view class='com-picker-result'>
+        <slot></slot>
+      </view>
+      <view class='com-picker-finish' bindtap='pickerFinish'>完成</view>
+    </view>
+    <view class='com-title' wx:if="{{propTitle.length!=0}}">
+      <view wx:for="{{title}}" wx:key="{{index}}">{{item}}</view>
+    </view>
+    <picker-view indicator-style="height: 40px;" style="width: 100%; height: 200px;" value="{{value}}" bindchange="bindChange">
+      <picker-view-column wx:for="{{range}}" wx:key="{{index}}">
+        <view wx:for="{{item}}" wx:for-item="a" style="line-height: 40px">{{a.v}}</view>
+      </picker-view-column>
+
+      <!-- <picker class="picker" bindchange="bindChange" value="{{index}}" range="{{Data}}" range-key="name">
+        <view>
+          当前选择：{{Data[index].name}}
+        </view>
+      </picker> -->
+    </picker-view>
+  </view>
+
+  <view class='com-picker-shadow {{pickerShow}}' bindtap='pickerHandler' wx:if="{{isShadow}}"></view>
+
+</view>
